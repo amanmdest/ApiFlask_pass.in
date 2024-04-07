@@ -18,8 +18,7 @@ class EventsRepository:
                 database.session.add(event)
                 database.session.commit()
 
-                return eventsInfo
-            
+                return eventsInfo           
             except IntegrityError:
                 raise Exception("Evento já cadastrado!")
             except Exception as exception:
@@ -34,8 +33,7 @@ class EventsRepository:
                         .query(Events)
                         .filter(Events.id==event_id)
                         .one()
-                )
-                
+                )            
                 return event
             except NoResultFound:
                 return None
