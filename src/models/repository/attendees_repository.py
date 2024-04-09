@@ -2,7 +2,7 @@ from typing import Dict
 from src.models.settings.connection import db_connection_handler
 from src.models.entities.attendees import Attendees 
 from src.models.entities.events import Events
-from sqlalchemy.orm import IntegrityError
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm.exc import NoResultFound
 
 class AttendeesRepository:

@@ -7,7 +7,7 @@ class EventHandler:
     def __init__(self) -> None:
         self.__events_repository = EventsRepository()
 
-    def register(self, http_request) -> HttpResponse:
+    def register(self, http_request: HttpRequest) -> HttpResponse:
         body = http_request.body
         body["uuid"] = str(uuid.uuid4())
         self.__events_repository.insert_event(body)
